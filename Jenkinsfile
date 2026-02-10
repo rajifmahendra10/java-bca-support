@@ -41,13 +41,14 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh '''
-                            curl -fL https://install-cli.jfrog.io | sh
+                            # Download JFrog CLI directly to workspace (no sudo needed)
+                            curl -fL https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/[RELEASE]/jfrog-cli-linux-amd64/jf -o jf
                             chmod +x jf
                             ./jf --version
                         '''
                     } else {
                         bat '''
-                            powershell -Command "Invoke-WebRequest -Uri 'https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/${JFROG_CLI_VERSION}/jfrog-cli-windows-amd64/jf.exe' -OutFile 'jf.exe'"
+                            powershell -Command "Invoke-WebRequest -Uri 'https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/2.52.0/jfrog-cli-windows-amd64/jf.exe' -OutFile 'jf.exe'"
                             jf.exe --version
                         '''
                     }
