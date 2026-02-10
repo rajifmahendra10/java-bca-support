@@ -92,20 +92,14 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <!-- Use public Maven Central for downloading dependencies (no auth needed) -->
     <repositories>
         <repository>
             <id>central</id>
-            <url>https://trialub2537.jfrog.io/artifactory/libs-release</url>
+            <url>https://repo.maven.apache.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <url>https://trialub2537.jfrog.io/artifactory/libs-snapshot</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
         </repository>
     </repositories>
 </project>
