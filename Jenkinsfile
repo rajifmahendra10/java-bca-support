@@ -42,7 +42,7 @@ pipeline {
                     if (isUnix()) {
                         sh '''
                             # Download JFrog CLI directly to workspace (no sudo needed)
-                            curl -fL https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/[RELEASE]/jfrog-cli-linux-amd64/jf -o jf
+                            curl -fL https://releases.jfrog.io/artifactory/jfrog-cli/v2-jf/2.52.0/jfrog-cli-linux-amd64/jf -o jf
                             chmod +x jf
                             ./jf --version
                         '''
