@@ -69,6 +69,9 @@ pipeline {
                     script {
                         if (isUnix()) {
                             sh '''
+                                # Remove existing config if present, then add new one
+                                ./jf config remove bca-jfrog --quiet || true
+                                
                                 ./jf config add bca-jfrog \
                                     --url=${JFROG_URL} \
                                     --user=${JFROG_USER} \
