@@ -173,7 +173,7 @@ pipeline {
                         sh '''
                             ./jf rt upload \
                                 "target/*.jar" \
-                                "${MAVEN_SNAPSHOT_REPO}/com/bca/demo/bca-security-demo/${BUILD_NUMBER}/" \
+                                "${MAVEN_SNAPSHOT_REPO}/com/bca/demo/bca-security-demo/1.0-SNAPSHOT/" \
                                 --flat=true \
                                 --build-name=${BUILD_NAME} \
                                 --build-number=${BUILD_NUMBER}
@@ -182,7 +182,7 @@ pipeline {
                         bat '''
                             jf.exe rt upload ^
                                 "target/*.jar" ^
-                                "%MAVEN_SNAPSHOT_REPO%/com/bca/demo/bca-security-demo/%BUILD_NUMBER%/" ^
+                                "%MAVEN_SNAPSHOT_REPO%/com/bca/demo/bca-security-demo/1.0-SNAPSHOT/" ^
                                 --flat=true ^
                                 --build-name=%BUILD_NAME% ^
                                 --build-number=%BUILD_NUMBER%
